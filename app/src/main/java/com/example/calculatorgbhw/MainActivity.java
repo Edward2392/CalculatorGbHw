@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        result =(TextView) findViewById(R.id.result);
+        result = (TextView) findViewById(R.id.result);
         output = (EditText) findViewById(R.id.output);
         operation = (TextView) findViewById(R.id.operation);
     }
@@ -29,37 +29,40 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putString("OPERATION", lastOperation);
-        if(operand!=null)
+        if (operand != null)
             outState.putDouble("OPERAND", operand);
         super.onSaveInstanceState(outState);
     }
+
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         lastOperation = savedInstanceState.getString("OPERATION");
-        operand= savedInstanceState.getDouble("OPERAND");
+        operand = savedInstanceState.getDouble("OPERAND");
         result.setText(operand.toString());
         operation.setText(lastOperation);
     }
-    public void onNumberClick(View view){
 
-        Button button = (Button)view;
+    public void onNumberClick(View view) {
+
+        Button button = (Button) view;
         output.append(button.getText());
 
-        if(lastOperation.equals("=") && operand!=null){
+        if (lastOperation.equals("=") && operand != null) {
             operand = null;
         }
     }
-    public void onOperationClick(View view){
 
-        Button button = (Button)view;
+    public void onOperationClick(View view) {
+
+        Button button = (Button) view;
         String op = button.getText().toString();
         String number = output.getText().toString();
-        if(number.length()>0){
+        if (number.length() > 0) {
             number = number.replace(',', '.');
-            try{
+            try {
                 performOperation(Double.valueOf(number), op);
-            }catch (NumberFormatException ex){
+            } catch (NumberFormatException ex) {
                 output.setText("");
             }
         }
@@ -67,35 +70,33 @@ public class MainActivity extends AppCompatActivity {
         operation.setText(lastOperation);
     }
 
-    private void performOperation(Double number, String operation){
+    private void performOperation(Double number, String operation) {
 
-        if(operand ==null){
+        if (operand == null) {
             operand = number;
-        }
-        else{
-            if(lastOperation.equals("=")){
+        } else {
+            if (lastOperation.equals("=")) {
                 lastOperation = operation;
             }
-            switch(lastOperation){
+            switch (lastOperation) {
                 case "=":
-                    operand =number;
+                    operand = number;
                     break;
                 case "/":
-                    if(number==0){
-                        operand =0.0;
-                    }
-                    else{
-                        operand /=number;
+                    if (number == 0) {
+                        operand = 0.0;
+                    } else {
+                        operand /= number;
                     }
                     break;
                 case "*":
-                    operand *=number;
+                    operand *= number;
                     break;
                 case "+":
-                    operand +=number;
+                    operand += number;
                     break;
                 case "-":
-                    operand -=number;
+                    operand -= number;
                     break;
             }
         }

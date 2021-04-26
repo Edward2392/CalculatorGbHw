@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,14 +16,16 @@
         android:layout_height="30dp"
         android:layout_columnSpan="2"
         android:layout_gravity="fill_horizontal"
-        />
+        android:textColor="@color/black"/>
+
     <TextView
         android:id="@+id/operation"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_columnSpan="2"
         android:layout_gravity="fill_horizontal"
-        />
+        android:textColor="@color/black"/>
+
     <EditText
         android:id="@+id/output"
         android:layout_width="wrap_content"
@@ -33,118 +33,139 @@
         android:layout_columnSpan="4"
         android:layout_gravity="fill_horizontal"
         android:layout_marginEnd="20dp"
-        />
-    <Button
+        android:textColor="@color/black"/>
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn1"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button1"
         android:onClick="onNumberClick"
-        />
+        android:text="@string/button1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn2"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button2"
-        android:onClick="onNumberClick"/>
+        android:onClick="onNumberClick"
+        android:text="@string/button2"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn3"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button3"
-        android:onClick="onNumberClick"/>
+        android:onClick="onNumberClick"
+        android:text="@string/button3"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnMin"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/buttonMinus"
-        android:onClick="onOperationClick"/>
+        android:onClick="onOperationClick"
+        android:text="@string/buttonMinus"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn4"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button4"
-        android:onClick="onNumberClick"/>
+        android:onClick="onNumberClick"
+        android:text="@string/button4"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn5"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button5"
-        android:onClick="onNumberClick"/>
+        android:onClick="onNumberClick"
+        android:text="@string/button5"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn6"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button6"
-        android:onClick="onNumberClick"/>
+        android:onClick="onNumberClick"
+        android:text="@string/button6"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPlus"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/buttonPlus"
-        android:onClick="onOperationClick"/>
+        android:onClick="onOperationClick"
+        android:text="@string/buttonPlus"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn7"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button7"
-        android:onClick="onNumberClick"/>
+        android:onClick="onNumberClick"
+        android:text="@string/button7"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn8"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button8"
-        android:onClick="onNumberClick"/>
+        android:onClick="onNumberClick"
+        android:text="@string/button8"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn9"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button9"
-        android:onClick="onNumberClick"/>
+        android:onClick="onNumberClick"
+        android:text="@string/button9"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDiv"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/buttonDivision"
-        android:onClick="onOperationClick"/>
+        android:onClick="onOperationClick"
+        android:text="@string/buttonDivision"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn0"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnSpan="2"
         android:layout_gravity="fill_horizontal"
-        android:text="@string/button0"
-        android:onClick="onNumberClick"/>
+        android:onClick="onNumberClick"
+        android:text="@string/button0"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnDot"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/buttonDot"
-        android:onClick="onOperationClick"/>
+        android:onClick="onOperationClick"
+        android:text="@string/buttonDot"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnMult"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/buttonMulti"
-        android:onClick="onOperationClick"/>
+        android:onClick="onOperationClick"
+        android:text="@string/buttonMulti"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEq"
+        style="@style/CalcButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnSpan="3"
         android:layout_gravity="fill_horizontal"
-        android:text="@string/buttonEqu"
-        android:onClick="onOperationClick"/>
+        android:onClick="onOperationClick"
+        android:text="@string/buttonEqu"/>
 
 
 </GridLayout>
