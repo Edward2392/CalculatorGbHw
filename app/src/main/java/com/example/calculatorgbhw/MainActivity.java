@@ -2,6 +2,7 @@ package com.example.calculatorgbhw;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         output = (EditText) findViewById(R.id.output);
         operation = (TextView) findViewById(R.id.operation);
     }
+
+
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -102,5 +105,17 @@ public class MainActivity extends AppCompatActivity {
         }
         result.setText(operand.toString().replace('.', ','));
         output.setText("");
+    }
+
+
+    public void onSwitch(View view) {
+        Button btnSet = findViewById(R.id.btnSetting);
+        btnSet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent runSetting = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(runSetting);
+            }
+        });
     }
 }

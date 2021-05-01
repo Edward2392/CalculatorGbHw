@@ -167,5 +167,13 @@
         android:onClick="onOperationClick"
         android:text="@string/buttonEqu"/>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSetting"
+        style="@style/CalcButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onSwitch"
+        android:text="@string/buttonSetting"
+        />
 
 </GridLayout>
