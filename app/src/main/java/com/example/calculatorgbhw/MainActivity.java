@@ -3,12 +3,15 @@ package com.example.calculatorgbhw;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import static com.example.calculatorgbhw.SettingActivity.KEY;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,8 +21,18 @@ public class MainActivity extends AppCompatActivity {
     Double operand = null;
     String lastOperation = "=";
 
+    private void setTheme() {
+        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean(KEY, false)) {
+            this.setTheme(R.style.Theme_CalculatorGBHW);
+        } else {
+            this.setTheme(R.style.Theme_CalculatorNEW);
+        }
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         result = (TextView) findViewById(R.id.result);
@@ -27,7 +40,11 @@ public class MainActivity extends AppCompatActivity {
         operation = (TextView) findViewById(R.id.operation);
     }
 
-
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -118,4 +135,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

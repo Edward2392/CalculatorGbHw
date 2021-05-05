@@ -3,16 +3,16 @@ package com.example.calculatorgbhw;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
-import android.content.Context;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.View;
+
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
 public class SettingActivity extends AppCompatActivity {
-    private final static String KEY = "KEY";
+    public final static String KEY = "KEY";
 
     SwitchCompat switchTheme;
 
@@ -29,6 +29,7 @@ public class SettingActivity extends AppCompatActivity {
             setTheme(R.style.Theme_CalculatorNEW);
         }
         setContentView(R.layout.activity_setting);
+
         switchTheme = findViewById(R.id.switch_Theme);
 
         switchTheme.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
@@ -36,8 +37,10 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                sharedPreferences.edit().putBoolean(KEY, isChecked).apply();
-                recreate();
+                if (buttonView.isPressed()) {
+                    sharedPreferences.edit().putBoolean(KEY, isChecked).apply();
+                    recreate();
+                }
             }
         });
     }
