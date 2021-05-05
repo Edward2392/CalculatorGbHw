@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CalcButtonStyle">
+        <item name="android:textSize">@dimen/calc_bottom_text_size</item>
+        <item name="backgroundTint">@color/background_bottom</item>
+    </style>
+
+
+</resources>
